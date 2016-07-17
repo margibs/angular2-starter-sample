@@ -1,3 +1,55 @@
 <h1>
   {{title}}
 </h1>
+<img [src]="imageUrl" alt="">
+
+<!-- Class Binding -->
+<button class="btn btn-primary" [class.active]="isActive">Submit</button>
+
+<!-- Style Binding -->
+<button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'grey'" >Submit 2</button>
+
+<!-- Event Binding -->
+<div (click)="onDivClick()">
+  <button (click)="onClick($event)">Submit 3</button>
+</div>
+
+<!-- Two-way Binding -->
+<input type="text" [(ngModel)] ="title">
+
+<app-favorite [is-Favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></app-favorite>
+
+<app-like [isLike]="post.isLike" [totalLikes]="post.isLikeCounter"></app-like>
+<br />
+<app-vote [voteCount]="post.voteCount" [myVote]="post.myVote" (vote)="onVote($event)"></app-vote>
+<!--<app-courses></app-courses>
+<app-authors></app-authors>-->
+
+<!--PIPES-->
+<div>
+  <h2>Pipe Sample Exerpt</h2>
+  {{post.title}}
+  <br />
+  {{post.body | summary:50 }}
+</div>
+
+<!--NG CONTENT-->
+<div>
+  <h2>NG Content</h2>
+  <app-bootstrap-panel> 
+    <div class="heading">
+      Heading ni
+    </div>
+    <div class="body">
+      Watermelon
+    </div>
+  </app-bootstrap-panel>
+</div>
+
+<!--ZIPPY EXERCISE-->
+<div>
+  <h2>Zippy Exercise</h2>
+  <app-zippy *ngFor="let zippy of zippies" [title]="zippy.title">
+      {{zippy.content}}
+  </app-zippy>
+</div>

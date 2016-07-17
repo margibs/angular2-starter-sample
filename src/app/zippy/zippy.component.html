@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading" (click)="dropDown()">
+    {{title}}
+    <span>
+      <i 
+      class="pull-right glyphicon"
+      [ngClass] = "{
+        'glyphicon-chevron-up': !show,
+        'glyphicon-chevron-down': show
+      }"
+      ></i>
+    </span>
+
+  </div>
+  <div class="panel-body" [hidden]="!show">
+    <ng-content></ng-content>
+  </div>
+</div>

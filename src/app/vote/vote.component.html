@@ -1,0 +1,5 @@
+<div class="voteContainer">
+  <i class="glyphicon glyphicon-menu-up vote-button" (click)="upVote()" [class.highlighted]="myVote == 1"></i>
+    <span class="vote-count">{{ voteCount + myVote }}</span>
+  <i class="glyphicon glyphicon-menu-down vote-button" (click)="downVote()" [class.highlighted]="myVote == -1"></i>
+</div>
